@@ -46,7 +46,7 @@ if [ "$(grep ":min-lein-version[[:space:]]\+\"2" $BUILD_DIR/project.clj)" != "" 
   else
       LEIN_BUILD_TASK=${LEIN_BUILD_TASK:-"with-profile production compile :all"}
   fi
-  LEIN_BUILD_TASK="do cljsbuild, "$LEIN_BUILD_TASK
+  LEIN_BUILD_TASK="do cljsbuild once, "$LEIN_BUILD_TASK
 else
   LEIN_VERSION="1.7.1"
   LEIN_BIN_SOURCE="$(dirname $0)/../opt/lein1"
